@@ -1,7 +1,7 @@
 package model;
 import java.util.ArrayList;
 import java.util.List;
-import java.time.LocalDateTime;;
+import java.time.LocalDateTime;
 import javax.persistence.*;
 @Entity
 public class Carrinho {
@@ -14,8 +14,9 @@ public class Carrinho {
 	@Column
 	private TipoPagamento tipoPagamento;
 	
-	@Column
+	@ManyToMany
 	private List<Item> itens = new ArrayList<>();
+	
 	@Column
 	private Double valorTotal;
 	public Long getId() {
