@@ -9,8 +9,10 @@ public class Categoria {
 	@Id
 	@GeneratedValue
 	private Long id;
+	
 	@ManyToMany(mappedBy = "categoria")
 	private List<Item> itens = new ArrayList<>();
+	
 	@Column
 	private String nome;
 	public Long getId() {

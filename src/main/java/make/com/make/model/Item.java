@@ -1,4 +1,7 @@
 package make.com.make.model;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -8,7 +11,6 @@ public class Item {
 	@GeneratedValue
 	private Long id;
 	
-	@ManyToMany(mappedBy = "itens")
 	private String produto;
 	
 	@Column
@@ -18,7 +20,7 @@ public class Item {
 	private Double valor;
 	
 	@ManyToMany
-	private Categoria categoria;
+	private List<Categoria> categoria = new ArrayList<>();
 	
 	
 	public Long getId() {

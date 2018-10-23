@@ -9,10 +9,13 @@ public class Carrinho {
 	@Id
 	@GeneratedValue
 	private Long id;
+	
 	@OneToOne(mappedBy ="carrinho")
 	private Cliente cliente;
+	
 	@Column
 	private LocalDateTime data;
+	
 	@Column
 	private TipoPagamento tipoPagamento;
 	
@@ -21,6 +24,7 @@ public class Carrinho {
 	
 	@Column
 	private Double valorTotal;
+	
 	public Long getId() {
 		return id;
 	}
