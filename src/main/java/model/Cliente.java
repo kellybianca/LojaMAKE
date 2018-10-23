@@ -21,7 +21,7 @@ public class Cliente {
 			orphanRemoval = true
 			)
 	
-	private Carrinho;
+	private Carrinho carrinho;
 	
 
 	public Long getId() {
