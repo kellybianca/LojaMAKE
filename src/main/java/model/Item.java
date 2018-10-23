@@ -15,6 +15,10 @@ public class Item {
 	@Column
 	private Double valor;
 	
+	@ManyToMany
+	private Categoria categoria;
+	
+	
 	public Long getId() {
 		return id;
 	}
