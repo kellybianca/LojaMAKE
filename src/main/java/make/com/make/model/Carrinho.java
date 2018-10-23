@@ -5,7 +5,9 @@ import java.time.LocalDateTime;
 import javax.persistence.*;
 @Entity
 public class Carrinho {
-
+	
+	@Id
+	@GeneratedValue
 	private Long id;
 	@OneToOne(mappedBy ="carrinho")
 	private Cliente cliente;

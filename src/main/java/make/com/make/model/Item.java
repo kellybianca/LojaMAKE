@@ -4,6 +4,8 @@ import javax.persistence.*;
 @Entity
 public class Item {
 	
+	@Id
+	@GeneratedValue
 	private Long id;
 	
 	@ManyToMany(mappedBy = "itens")
