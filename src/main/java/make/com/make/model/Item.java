@@ -1,4 +1,4 @@
-package model;
+package make.com.make.model;
 import javax.persistence.*;
 
 @Entity

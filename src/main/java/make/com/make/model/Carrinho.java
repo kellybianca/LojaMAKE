@@ -1,4 +1,4 @@
-package model;
+package make.com.make.model;
 import java.util.ArrayList;
 import java.util.List;
 import java.time.LocalDateTime;

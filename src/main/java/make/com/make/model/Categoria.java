@@ -1,4 +1,7 @@
-package model;
+package make.com.make.model;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.*;
 @Entity
 public class Categoria {
@@ -7,7 +10,7 @@ public class Categoria {
 	@GeneratedValue
 	private Long id;
 	@ManyToMany(mappedBy = "categoria")
-	private Item item;
+	private List<Item> itens = new ArrayList<>();
 	@Column
 	private String nome;
 	public Long getId() {
@@ -16,11 +19,11 @@ public class Categoria {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public Item getItem() {
-		return item;
+	public List<Item> getItens() {
+		return itens;
 	}
-	public void setItem(Item item) {
-		this.item = item;
+	public void setItens(List<Item> itens) {
+		this.itens = itens;
 	}
 	public String getNome() {
 		return nome;
@@ -28,6 +31,8 @@ public class Categoria {
 	public void setNome(String nome) {
 		this.nome = nome;
 	}
+	
+	
 	
 	
 }
