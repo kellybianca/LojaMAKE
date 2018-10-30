@@ -25,7 +25,8 @@ public class Categoria {
 		return itens;
 	}
 	public void setItens(List<Item> itens) {
-		this.itens = itens;
+		this.itens.clear();
+		this.itens.addAll(itens);
 	}
 	public String getNome() {
 		return nome;
