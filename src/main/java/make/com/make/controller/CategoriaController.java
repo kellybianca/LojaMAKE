@@ -45,12 +45,12 @@ public class CategoriaController {
 				}).orElseThrow(() -> new ResourceNotFoundException("Categoria not found: " +categoriaId));
 	}
 	
-	@DeleteMapping("/carrinho/{carrinhoId}")
+	@DeleteMapping("/categoria/{categoriaId}")
 	public ResponseEntity<?> deleteQuestion (@PathVariable Long categoriaId){
 		return categoriaRepository.findById(categoriaId)
 				.map(categoria -> {
 					categoriaRepository.delete(categoria);
 					return ResponseEntity.ok().build();
-				}).orElseThrow(() -> new ResourceNotFoundException("Carrinho not found: " +categoriaId));
+				}).orElseThrow(() -> new ResourceNotFoundException("Categoria not found: " +categoriaId));
 	}
 }
