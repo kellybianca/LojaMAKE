@@ -50,10 +50,12 @@ public class Carrinho {
 		this.tipoPagamento = tipoPagamento;
 	}
 	public List<Item> getItens() {
+		
 		return itens;
 	}
 	public void setItens(List<Item> itens) {
-		this.itens = itens;
+		this.itens.clear();
+		this.itens.addAll(itens);
 	}
 	public Double getValorTotal() {
 		return valorTotal;
