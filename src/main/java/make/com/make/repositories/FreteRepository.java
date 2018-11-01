@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import make.com.make.model.Frete;
 
 @Repository
-public interface FreteReposity extends JpaRepository<Frete, Long>{
+public interface FreteRepository extends JpaRepository<Frete, Long>{
 
 }

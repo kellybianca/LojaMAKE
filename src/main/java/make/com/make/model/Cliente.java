@@ -20,7 +20,6 @@ public class Cliente {
 			cascade = CascadeType.ALL,
 			orphanRemoval = true
 			)
-	
 	private Carrinho carrinho;
 	
 
