@@ -30,6 +30,11 @@ public class FreteController {
 		return freteRepository.findAll(pageable);
 	}
 	
+	@GetMapping("/frete/{freteId}")
+	public Frete getFrete(@PathVariable Long freteId) {
+		return freteRepository.findById(freteId)
+				.orElseThrow(() -> new ResourceNotFoundException("Frete not found: "+freteId));
+	}
 	@PostMapping("/frete")
 	public Frete createFrete(@Valid @RequestBody Frete frete) {
 		return freteRepository.save(frete);
