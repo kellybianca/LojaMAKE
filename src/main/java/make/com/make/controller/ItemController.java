@@ -29,6 +29,12 @@ public class ItemController {
 		return itemRepository.findAll(pageable);
 	}
 	
+	@GetMapping("/item/{itemId}")
+	public Item getItem(@PathVariable Long itemId) {
+		return itemRepository.findById(itemId)
+				.orElseThrow(() -> new ResourceNotFoundException("item not found: "+itemId));
+	}
+	
 	@PostMapping("/item")
 	public Item createItem(@Valid @RequestBody Item item) {
 		return itemRepository.save(item);
