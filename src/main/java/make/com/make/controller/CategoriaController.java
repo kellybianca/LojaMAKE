@@ -29,6 +29,12 @@ public class CategoriaController {
 			return categoriaRepository.findAll(pageable);
 	}
 	
+	@GetMapping("/categoria/{categoriaId}")
+	public Categoria getCategoria(@PathVariable Long categoriaId) {
+		return categoriaRepository.findById(categoriaId)
+				.orElseThrow(() -> new ResourceNotFoundException("Categoria not found: " +categoriaId));
+	}
+	
 	@PostMapping("/categoria")
 	public Categoria createCategoria(@Valid @RequestBody Categoria categoria) {
 		return categoriaRepository.save(categoria);
