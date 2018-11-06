@@ -29,6 +29,12 @@ public class CarrinhoController {
 		return carrinhoRepository.findAll(pageable);
 	}
 	
+	@GetMapping("/carrinho/{carrinhoId}")
+	public Carrinho getCarrinho(@PathVariable Long carrinhoId) {
+		return carrinhoRepository.findById(carrinhoId)
+				.orElseThrow(() -> new ResourceNotFoundException("Carrinho not found: "+carrinhoId));
+	}
+	
 	@PostMapping("/carrinho")//adicionar um novo elemento
 	public Carrinho createCarrinho(@Valid @RequestBody Carrinho carrinho) {
 		return carrinhoRepository.save(carrinho);
