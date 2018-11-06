@@ -29,6 +29,11 @@ public class ClienteController {
 		return clienteRepository.findAll(pageable);
 	}
 	
+	@GetMapping("/cliente/{clienteId}")
+	public Cliente getCliente(@PathVariable Long clienteId) {
+		return clienteRepository.findById(clienteId)
+				.orElseThrow(() -> new ResourceNotFoundException("Cliente not found: "+clienteId));
+	}
 	@PostMapping("/cliente")
 	public Cliente createCliente(@Valid @RequestBody Cliente cliente) {
 		return clienteRepository.save(cliente);
