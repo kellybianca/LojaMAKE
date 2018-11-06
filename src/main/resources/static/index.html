@@ -5,16 +5,34 @@
 <title>MAKE</title>
 </head>
 <body>
-Oi tudo bem,
+Oi tudo bem, contigo?
 
 	<script type = "text/javascript">
 		let xhr = new XMLHttpRequest();
-		xhr.open('GET','/item/4')//metodo, endereco, async, user, password 
+		xhr.open('GET','/item/5')//metodo, endereco, async, user, password 
 		
 		xhr.onload = function(){
-			alert(`Status: ${this.status} -- ${this.responseText}`)
+			if(this.status != 200) console.log("Error !");
+			else{
+				console.log(this.responseText);
+				
+				let a = JSON.parse(this.responseText);
+				
+				console.log(a);
+				
+			}
 			
 		};
+		xhr2.setRequestHeader('content-Type','application/json');
+		
+		let novo_p ={"timestamp"; "2018-11-01T00:06:02",
+		"item":{"id":20}
+		"coordinate":{"latitude":-45.8485,
+			"longitude":-66.3345}
+		};
+		
+		xhr2.send(JSON.stringify(novo_p));
+		
 		xhr.onerror = () => alert('erro!');
 		xhr.send();
 	</script> 
