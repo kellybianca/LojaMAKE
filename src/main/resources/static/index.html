@@ -1,40 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>MAKE</title>
+	<meta charset="UTF-8">
+	<title>MAKE</title>
+	<script type="text/javascript" src="/js/script.js"></script>
+	<style type="text/css">
+		table,tr,th{
+			border : 1px solid black;
+			border-collapse: collapse;
+		}
+	</style>
 </head>
-<body>
-Oi tudo bem, contigo?
 
-	<script type = "text/javascript">
-		let xhr = new XMLHttpRequest();
-		xhr.open('GET','/item/5')//metodo, endereco, async, user, password 
-		
-		xhr.onload = function(){
-			if(this.status != 200) console.log("Error !");
-			else{
-				console.log(this.responseText);
-				
-				let a = JSON.parse(this.responseText);
-				
-				console.log(a);
-				
-			}
-			
-		};
-		xhr2.setRequestHeader('content-Type','application/json');
-		
-		let novo_p ={"timestamp"; "2018-11-01T00:06:02",
-		"item":{"id":20}
-		"coordinate":{"latitude":-45.8485,
-			"longitude":-66.3345}
-		};
-		
-		xhr2.send(JSON.stringify(novo_p));
-		
-		xhr.onerror = () => alert('erro!');
-		xhr.send();
-	</script> 
+<body>
+<pre>
+Item:
+</pre>
+
+<table id="item">
+	<tr>
+		<th>Produto</th>
+		<th>Quantidade</th>
+		<th>Valor Total</th>
+
+	</tr>
+</table>
 </body>
 </html>
