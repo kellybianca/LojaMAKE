@@ -28,6 +28,32 @@ xhr.onload = function(){
 };
 	
 xhr.send();
+
+let xhr2 = new XMLHttpRequest();
+
+function send() {
+	xhr2.open('POST','/item')
+	xhr2.setRequestHeader('content-Type','application/json');
+	
+		let produtos = document.getElementById('produto').value;
+		let quantidades = document.getElementById('quantidade').value;
+		let valorTotal = document.getElementById('valor').value;
+		
+		//console.log(produtos+ " "+quantidades+" "+valorTotal);   
+		
+		let form = {
+				"produto" : `${produtos}`,
+				"quantidade" : `${quantidades}`,
+				"valor" : `${valorTotal}`
+		}
+		
+		xhr2.send(JSON.stringify(form));
+
+		
+		
+}
+
+
 /*
 xhr2.setRequestHeader('content-Type','application/json');
 
