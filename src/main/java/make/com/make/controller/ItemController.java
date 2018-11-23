@@ -41,7 +41,7 @@ public class ItemController {
 		return itemRepository.save(item);
 	}
 	
-	@PostMapping ("item/{itemId}/addcategoria")
+	@PutMapping ("item/{itemId}/addcategoria")
 	public Item addItem (@PathVariable Long itemId,
 													@Valid @RequestBody Categoria categoria) {
 		return itemRepository.findById(itemId)
