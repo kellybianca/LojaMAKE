@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import make.com.make.exception.ResourceNotFoundException;
+import make.com.make.model.Categoria;
 import make.com.make.model.Item;
 import make.com.make.repositories.ItemRepository;
 
@@ -40,6 +41,17 @@ public class ItemController {
 		return itemRepository.save(item);
 	}
 	
+	@PostMapping ("item/{itemId}/addcategoria")
+	public Item addItem (@PathVariable Long itemId,
+													@Valid @RequestBody Categoria categoria) {
+		return itemRepository.findById(itemId)
+				.map(item -> {
+					item.addCategoria(categoria);
+					return itemRepository.save(item);
+		}).orElseThrow(() -> new ResourceNotFoundException("Not found: "+itemId));
+		
+	}
+	
 	@PutMapping("/item/{itemId}")
 	public Item updateItem(@PathVariable Long itemId,
 								@Valid @RequestBody Item itemRequest) {
@@ -51,6 +63,7 @@ public class ItemController {
 					return itemRepository.save(item);
 				}).orElseThrow(() -> new ResourceNotFoundException("item not found: "+itemId));
 	}
+	
 	
 	@DeleteMapping("/item/{itemId}")
 	public ResponseEntity<?> deleteQuestion(@PathVariable Long itemId){

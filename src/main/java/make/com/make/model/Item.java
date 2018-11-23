@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import javax.persistence.*;
+import javax.validation.Valid;
 
 @Entity
 public class Item {
@@ -21,7 +22,7 @@ public class Item {
 	
 	@ManyToMany
 	private List<Categoria> categoria = new ArrayList<>();
-	
+
 	
 	public Long getId() {
 		return id;
@@ -47,6 +48,11 @@ public class Item {
 	public void setValor(Double valor) {
 		this.valor = valor;
 	}
+	
+	public void addCategoria(@Valid Categoria categoria) {
+		this.categoria.add(categoria);
+	}
+	
 	
 	
 
