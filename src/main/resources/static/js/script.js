@@ -1,4 +1,58 @@
-let xhr = new XMLHttpRequest();
+
+function clique(){
+	let produto = document.getElementById('produto').value;
+	let quantidade = document.getElementById('quantidade').value;
+	let valor = document.getElementById('valor').value;
+
+	let data = {
+			"produto" : produto,
+			"quantidade" : quantidade,
+			"valor" : valor
+	};
+			
+			fetch("/item", {
+				method: "POST",
+				headers : {
+					"Content-Type": "application/json"
+				},
+				body: JSON.stringify(data)
+				
+			}).then(function(response){
+				createTable();
+				
+			}).catch(function(error) {
+				console.log(error);
+			})
+}
+
+
+function createTable(){
+	fetch("/item")
+		.then(function(response){
+		if(response.status >= 200 && response.status <= 300){
+			
+			response.json()
+				.then(function(data){
+					
+					let tb = document.getElementById("item");
+					tb.innerHTML =  "<tr><th>produto</th></th><th>quantidade</th><th>valor</th></tr>"
+						
+					for(let i = 0; i < data.content.length;i++){
+						
+
+						let k = data.content[i];
+						tb.innerHTML += `<tr><th>${k.produto}</th><th>${k.quantidade}</th>
+								<th>${k.valor}</th></tr>`;
+					}
+				})
+		}
+	}).catch(function(error) {
+		console.log(error);
+	});
+}
+
+createTable();
+/*let xhr = new XMLHttpRequest();
 xhr.open('GET','/item')//metodo, endereco, async, user, password 
 
 xhr.onload = function(){
@@ -52,9 +106,9 @@ function send() {
 		
 		
 }
+*/
 
-
-/*
+/*error
 xhr2.setRequestHeader('content-Type','application/json');
 
 let novo_p ={"produto"; "tarara",
