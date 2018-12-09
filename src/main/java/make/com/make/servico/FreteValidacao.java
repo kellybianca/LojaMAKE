@@ -41,6 +41,11 @@ public class FreteValidacao {
 		matcher = pattern.matcher(Endereco);
 		return matcher.matches();
 	}
+
+	public boolean validarUsuario(String cliente, long cep, Double valor, String endereco) {
+
+		return false;
+	}
 	
 	
 	
