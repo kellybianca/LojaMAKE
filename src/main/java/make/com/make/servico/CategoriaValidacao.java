@@ -26,7 +26,7 @@ public class CategoriaValidacao {
 		return matcher.matches();
 	}
 	
-public boolean validarItens(String itens) {
+	public boolean validarItens(String itens) {
 		
 		pattern = Pattern.compile(NOME_PATTERN, Pattern.CASE_INSENSITIVE);
 		matcher = pattern.matcher(itens);
