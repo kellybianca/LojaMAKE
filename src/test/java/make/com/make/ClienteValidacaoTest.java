@@ -20,7 +20,6 @@ public class ClienteValidacaoTest {
 	}
 	
 	private void assertEquals(boolean b, boolean ehUsuarioValido) {
-		// TODO Auto-generated method stub
 		
 	}
 
@@ -28,26 +27,45 @@ public class ClienteValidacaoTest {
 	public void naoPodeValidarNomeESobrenomeEscritosSemEspaco() {
 		ClienteValidacao servico = new ClienteValidacao();
 
-		String nome = "AnaMariaBraga";
-		String email = "anamaria@gmail.com";
-		int idade = 30;
+		String nome = "EricaBeatriz";
+		String cpf = "12345678912";
+		String senha = "12345678";
 		
-		boolean ehUsuarioValido = servico.validarUsuario(nome, email, idade);
-		
+		boolean ehUsuarioValido = servico.validarUsuario(nome, cpf, senha);
 		assertEquals(false, ehUsuarioValido);
 	}
 	
+	public void naoPodeValidarSenhaVazia() {
+		ClienteValidacao servico = new ClienteValidacao();
 
+		String nome = "EricaBeatriz";
+		String cpf = "12345678912";
+		String senha = " ";
+		
+		boolean ehUsuarioValido = servico.validarUsuario(nome, cpf, senha);
+		assertEquals(false, ehUsuarioValido);
+	}
+	
+	public void naoPodeValidarCpfComCaracteres() {
+		ClienteValidacao servico = new ClienteValidacao();
+
+		String nome = "EricaBeatriz";
+		String cpf = "123.456.789-12";
+		String senha = "12345678";
+		
+		boolean ehUsuarioValido = servico.validarUsuario(nome, cpf, senha);
+		assertEquals(false, ehUsuarioValido);
+	}
 
 	@Test
 	public void permitirValidarComTudoCorreto() {
 		ClienteValidacao servico = new ClienteValidacao();
 
 		String nome = "Ana Maria Braga";
-		String email = "anamaria@gmail.com";
-		int idade = 69;
+		String cpf = "123456778925";
+		String senha = "12346578";
 		
-		boolean ehUsuarioValido = servico.validarUsuario(nome, email, idade);
+		boolean ehUsuarioValido = servico.validarUsuario(nome, cpf, senha);
 		
 		assertEquals(true, ehUsuarioValido);
 	}
