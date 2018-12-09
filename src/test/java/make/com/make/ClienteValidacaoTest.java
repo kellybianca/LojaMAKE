@@ -1,20 +1,29 @@
 package make.com.make;
 
+import org.junit.Test;
+
+import make.com.make.servico.ClienteValidacao;
+
 public class ClienteValidacaoTest {
 
 	@Test
 	public void naoPodeValidarNomeComNumeros() {
-		ClienteValidacao servico = new ClienteValidacao();
+		ClienteValidacao cliente = new ClienteValidacao();
 
-		String nome = "Ana Maria 123 Braga";
-		String email = "anamaria@gmail.com";
-		int idade = 30;
+		String nome = "Erica 123 Beatriz";
+		String cpf = "12345678912";
+		String senha = "123456";
 		
-		boolean ehUsuarioValido = servico.validarUsuario(nome, email, idade);
+		boolean ehUsuarioValido = cliente.validarUsuario(nome, cpf, senha);
 		
 		assertEquals(false, ehUsuarioValido);
 	}
 	
+	private void assertEquals(boolean b, boolean ehUsuarioValido) {
+		// TODO Auto-generated method stub
+		
+	}
+
 	@Test
 	public void naoPodeValidarNomeESobrenomeEscritosSemEspaco() {
 		ClienteValidacao servico = new ClienteValidacao();

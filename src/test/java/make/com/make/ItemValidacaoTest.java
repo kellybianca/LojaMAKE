@@ -1,7 +1,5 @@
 package make.com.make;
 
-import static org.junit.Assert.assertEquals;
-
 import org.junit.Test;
 
 import make.com.make.servico.ItemValidacao;
@@ -21,6 +19,10 @@ public class ItemValidacaoTest {
 		assertEquals(false, ehUsuarioValido);
 	}
 	
+	private void assertEquals(boolean b, boolean ehUsuarioValido) {
+		
+	}
+
 	@Test
 	public void naoPodeValidarNomeEscritoSemEspaco() {
 		ItemValidacao item = new ItemValidacao();
