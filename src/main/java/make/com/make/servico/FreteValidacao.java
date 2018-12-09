@@ -10,7 +10,7 @@ public class FreteValidacao {
 		
 	private static Matcher matcher;
 	
-	public boolean validarUsuario(String cliente, Long cep, Double valorTotal, String endereco) {
+	public boolean validarUsuario(String cliente, CharSequence cep, CharSequence valorTotal, String endereco) {
 					
 		if(validarCliente(cliente) && validarCep(cep) && validarValorTotal(valorTotal) && validarEndereco(endereco) ) {
 			return true;
@@ -24,15 +24,21 @@ public class FreteValidacao {
 		return matcher.matches();
 	}
 	
-	public boolean validarCep(Long cep) {
+	public boolean validarCep(CharSequence cep) {
 		pattern = Pattern.compile(NOME_PATTERN, Pattern.CASE_INSENSITIVE);
 		matcher = pattern.matcher(cep);
 		return matcher.matches();
 	}
 	
-	public boolean validarValorTotal(Double valorTotal) {
+	public boolean validarValorTotal(CharSequence valorTotal) {
 		pattern = Pattern.compile(NOME_PATTERN, Pattern.CASE_INSENSITIVE);
 		matcher = pattern.matcher(valorTotal);
+		return matcher.matches();
+	}
+	
+	public boolean validarEndereco(String Endereco) {
+		pattern = Pattern.compile(NOME_PATTERN, Pattern.CASE_INSENSITIVE);
+		matcher = pattern.matcher(Endereco);
 		return matcher.matches();
 	}
 	
