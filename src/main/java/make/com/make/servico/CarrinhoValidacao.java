@@ -11,25 +11,12 @@ public class CarrinhoValidacao {
 	
 	private static Matcher matcher;
 	
-	/*
-	 * data
-	 * tipo de pagamento
-	 * itens
-	 * valor
-	 */
-	
-	public boolean validarUsuario(String cliente, String data, String tipoPagamento, String item, CharSequence valor) {
+	public boolean validarUsuario(String cliente, String tipoPagamento, String item, CharSequence valor) {
 					
-		if(validarCliente(cliente) && validarData(data) && validarTipoPagamento(tipoPagamento) && validarItem(item) && validarValor(valor) ) {
+		if(validarCliente(cliente) && validarTipoPagamento(tipoPagamento) && validarItem(item) && validarValor(valor) ) {
 			return true;
 		}
 		return false;
-	}
-	
-	public boolean validarData(String data) {
-		pattern = Pattern.compile(NOME_PATTERN, Pattern.CASE_INSENSITIVE);		
-		matcher= pattern.matcher(data);
-		return matcher.matches();
 	}
 	
 	public boolean validarCliente(String cliente) {
