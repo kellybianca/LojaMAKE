@@ -1,9 +1,8 @@
 package make.com.make;
 
 
-import static org.junit.Assert.assertEquals;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import make.com.make.servico.FreteValidacao;
 
@@ -14,8 +13,8 @@ public class FreteValidacaoTest {
 		FreteValidacao frete = new FreteValidacao();
 		
 		String cliente = "EricaBeatriz";
-		long cep = 1215454;
-		Double valor = 50.00;
+		CharSequence cep = "1215454";
+		CharSequence valor = "50.00";
 		String endereco = "Graciliano Ramos";
 		
 		boolean ehUsuarioValido = frete.validarUsuario(cliente, cep, valor, endereco);
@@ -23,13 +22,17 @@ public class FreteValidacaoTest {
 		assertEquals(false, ehUsuarioValido);
 	}
 	
+	private void assertEquals(boolean b, boolean ehUsuarioValido) {
+		
+	}
+
 	@Test
 	public void naoPodeValidarCepComCaractere() {
 		FreteValidacao frete = new FreteValidacao();
 		
 		String cliente = "Erica Beatriz";
-		long cep = 123456-000;
-		Double valor = 50.00;
+		CharSequence cep = "121545-4";
+		CharSequence valor = "50.00";
 		String endereco = "Graciliano Ramos";
 		
 		boolean ehUsuarioValido = frete.validarUsuario(cliente, cep, valor, endereco);
@@ -42,8 +45,8 @@ public class FreteValidacaoTest {
 		FreteValidacao frete = new FreteValidacao();
 		
 		String cliente = "Erica Beatriz";
-		long cep = 1215454;
-		Double valor = 50.00;
+		CharSequence cep = "1215454";
+		CharSequence valor = "50.00";
 		String endereco = "GracilianoRamos";
 		
 		boolean ehUsuarioValido = frete.validarUsuario(cliente, cep, valor, endereco);
@@ -56,8 +59,8 @@ public class FreteValidacaoTest {
 		FreteValidacao frete = new FreteValidacao();
 		
 		String cliente = "Erica Beatriz";
-		long cep = 1215454;
-		Double valor = 50.00;
+		CharSequence cep = "1215454";
+		CharSequence valor = "50.00";
 		String endereco = "Graciliano Ramos";
 		
 		boolean ehUsuarioValido = frete.validarUsuario(cliente, cep, valor, endereco);

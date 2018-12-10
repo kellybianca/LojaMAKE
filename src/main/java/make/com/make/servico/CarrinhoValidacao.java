@@ -13,7 +13,7 @@ public class CarrinhoValidacao {
 	
 	public boolean validarUsuario(String cliente, String tipoPagamento, String item, CharSequence valor) {
 					
-		if(validarCliente(cliente) && validarTipoPagamento(tipoPagamento) && validarItem(item) && validarValor(valor) ) {
+		if(validarCliente(cliente) && validarTipoPagamento(tipoPagamento) && validarItem(item) && validarValor(valor)) {
 			return true;
 		}
 		return false;

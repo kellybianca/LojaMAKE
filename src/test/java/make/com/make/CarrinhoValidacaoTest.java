@@ -1,17 +1,14 @@
 package make.com.make;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+
+
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import make.com.make.servico.CarrinhoValidacao;
 
 public class CarrinhoValidacaoTest {
-
-	/*
-	 * 
-	 * String cliente,String tipoPagamento, String item, CharSequence valor
-	 */
 	
 	@Test
 	public void naoPodeValidarNomeESobrenomeEscritosSemEspaco() {
@@ -38,7 +35,7 @@ public class CarrinhoValidacaoTest {
 		
 		boolean ehUsuarioValido = carrinho.validarUsuario(cliente, tipoPagamento, item, valor);
 		
-		assertEquals(true, ehUsuarioValido);
+		assertEquals(false, ehUsuarioValido);
 	}
 	
 	@Test
@@ -52,7 +49,7 @@ public class CarrinhoValidacaoTest {
 		
 		boolean ehUsuarioValido = carrinho.validarUsuario(cliente, tipoPagamento, item, valor);
 		
-		assertEquals(true, ehUsuarioValido);
+		assertEquals(false, ehUsuarioValido);
 	}
 	
 	@Test
@@ -66,20 +63,19 @@ public class CarrinhoValidacaoTest {
 		
 		boolean ehUsuarioValido = carrinho.validarUsuario(cliente, tipoPagamento, item, valor);
 		
-		assertEquals(true, ehUsuarioValido);
+		assertEquals(false, ehUsuarioValido);
 	}
 		
 	@Test
 	public void permitirValidarComTudoCorreto() {
 		CarrinhoValidacao carrinho = new CarrinhoValidacao();
 
-		String cliente = "Ana Maria Braga";
+		String cliente = "Ana Maria";
 		String tipoPagamento = "Boleto";
 		String item = "Toalha";
 		CharSequence valor = "250.00";
 		
 		boolean ehUsuarioValido = carrinho.validarUsuario(cliente, tipoPagamento, item, valor);
-		
 		
 		assertEquals(true, ehUsuarioValido);
 	}

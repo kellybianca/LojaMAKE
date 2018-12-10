@@ -17,6 +17,9 @@ public class Item {
 	@Column
 	private String quantidade;
 	
+	@Column 
+	private String validade;
+	
 	@Column
 	private Double valor;
 	
@@ -24,6 +27,12 @@ public class Item {
 	private List<Categoria> categoria = new ArrayList<>();
 
 	
+	public String getValidade() {
+		return validade;
+	}
+	public void setValidade(String validade) {
+		this.validade = validade;
+	}
 	public Long getId() {
 		return id;
 	}

@@ -2,11 +2,13 @@
 function clique(){
 	let produto = document.getElementById('produto').value;
 	let quantidade = document.getElementById('quantidade').value;
+	let validade = document.getElementById('validade').value;
 	let valor = document.getElementById('valor').value;
 
 	let data = {
 			"produto" : produto,
 			"quantidade" : quantidade,
+			"validade" : validade,
 			"valor" : valor
 	};
 			
@@ -35,13 +37,13 @@ function createTable(){
 				.then(function(data){
 					
 					let tb = document.getElementById("item");
-					tb.innerHTML =  "<tr><th>produto</th></th><th>quantidade</th><th>valor</th></tr>"
+					tb.innerHTML =  "<tr><th> Produto </th></th><th> Quantidade </th><th> Validade </th><th> Valor Total </th></tr>"
 						
 					for(let i = 0; i < data.content.length;i++){
 						
 
 						let k = data.content[i];
-						tb.innerHTML += `<tr><th>${k.produto}</th><th>${k.quantidade}</th>
+						tb.innerHTML += `<tr><th>${k.produto}</th><th>${k.quantidade}</th><th>${k.validade}</th>
 								<th>${k.valor}</th></tr>`;
 					}
 				})
