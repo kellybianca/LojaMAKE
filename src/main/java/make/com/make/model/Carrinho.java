@@ -16,7 +16,7 @@ public class Carrinho {
 	@Column
 	private LocalDateTime data;
 	
-	@Column
+	@Column	
 	private TipoPagamento tipoPagamento;
 	
 	@ManyToMany
