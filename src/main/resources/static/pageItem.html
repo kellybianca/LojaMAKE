@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>MAKE</title>
+	<script type="text/javascript" src="/js/script.js"></script>
+	<style type="text/css">
+		table,tr,th{
+			border : 1px solid black;
+			border-collapse: collapse;
+		}
+		h2{
+			font-family: arial;
+			font-size: 30px;
+		}
+		body{
+	   	  background-image: url(https://st.depositphotos.com/1033579/1881/i/950/depositphotos_18818299-stock-photo-vintage-elegant-background-wedding-luxury.jpg);
+		}
+	</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css"  href="estilo.css" />
+	
+</head>
+<body>
+
+  <div class="container">
+  <h2>Item</h2>
+  <table class="table table-striped" id="item">
+    <thead>
+      <tr>
+        <th>Produto</th>
+        <th>Quantidade</th>
+        <th>Validade</th>
+        <th>Valor Total</th>
+      </tr>
+      <tr>
+       <input type="text" id="produto"/>
+        <input type="text" id="quantidade"/>
+        <input type="text" id ="validade"/>
+        <input type="text" id="valor"/>
+        <input type="button" value="Enviar" onclick="clique()"/>
+      </tr>
+    </thead>
+
+  </table>
+</div>
+
+</body>
+</html>

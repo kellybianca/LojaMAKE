@@ -1,54 +1,215 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<meta charset="UTF-8">
-	<title>MAKE</title>
-	<script type="text/javascript" src="/js/script.js"></script>
-	<style type="text/css">
-		table,tr,th{
-			border : 1px solid black;
-			border-collapse: collapse;
-		}
-		h2{
-			font-family: arial;
-			font-size: 30px;
-		}
-		body{
-	   	  background-image: url(https://st.depositphotos.com/1033579/1881/i/950/depositphotos_18818299-stock-photo-vintage-elegant-background-wedding-luxury.jpg);
-		}
-	</style>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	<link rel="stylesheet" type="text/css"  href="estilo.css" />
-	
+    <meta charset="utf-8">
+   
+    <title>MAKE</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style type="text/css">
+     
+body, html {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-color: #C0C0C0;
+}
+
+.card-container.card {
+    width: 350px;
+    padding: 40px 40px;
+    
+}
+
+.btn {
+    font-weight: 700;
+    height: 36px;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: default;
+}
+
+
+.card {
+    background-color: #F7F7F7;
+    
+    padding: 20px 25px 30px;
+    margin: 0 auto 25px;
+    margin-top: 50px;
+   
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    border-radius: 2px;
+    -moz-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+}
+
+.profile-img-card {
+    width: 100px;
+    height: 96px;
+    margin: 0 auto 10px;
+    display: block;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border-radius: 0;
+}
+
+
+.profile-name-card {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px 0 0;
+    min-height: 1em;
+}
+
+.reauth-email {
+    display: block;
+    color: #404040;
+    line-height: 2;
+    margin-bottom: 10px;
+    font-size: 14px;
+    text-align: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin #inputEmail,
+.form-signin #inputPassword {
+    direction: ltr;
+    height: 44px;
+    font-size: 16px;
+}
+
+.form-signin input[type=email],
+.form-signin input[type=password],
+.form-signin input[type=text],
+.form-signin button {
+    width: 100%;
+    display: block;
+    margin-bottom: 10px;
+    z-index: 1;
+    position: relative;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-signin .form-control:focus {
+    border-color: rgb(104, 145, 162);
+    outline: 0;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgb(104, 145, 162);
+}
+
+.btn-signin {
+   
+    background-color: rgb(104, 145, 162);
+   
+    padding: 0px;
+    font-weight: 700;
+    font-size: 14px;
+    height: 36px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: none;
+    -o-transition: all 0.218s;
+    -moz-transition: all 0.218s;
+    -webkit-transition: all 0.218s;
+    transition: all 0.218s;
+}
+
+.btn-signin:hover,
+.btn-signin:active,
+.btn-signin:focus {
+    background-color: rgb(12, 97, 33);
+}
+
+.forgot-password {
+    color: rgb(104, 145, 162);
+}
+
+.forgot-password:hover,
+.forgot-password:active,
+.forgot-password:focus{
+    color: rgb(12, 97, 33);
+}
+    </style>
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
 </head>
 <body>
 
-<div id="image">
-  <div class="container">
-  <h2>Item</h2>
-  <table class="table table-striped" id="item">
-    <thead>
-      <tr>
-        <th>Produto</th>
-        <th>Quantidade</th>
-        <th>Validade</th>
-        <th>Valor Total</th>
-      </tr>
-      <tr>
-       <input type="text" id="produto"/>
-        <input type="text" id="quantidade"/>
-        <input type="text" id ="validade"/>
-        <input type="text" id="valor"/>
-        <input type="button" value="Enviar" onclick="clique()"/>
-      </tr>
-    </thead>
+    <div class="container">
+        <div class="card card-container">
+            <img id="profile-img" class="profile-img-card" src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Amazon-icon.png" />
+            <form class="form-signin">
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="text" id="nome" class="form-control" placeholder="Login" required autofocus>
+                <input type="password" id="senha" class="form-control" placeholder="CPF" required>
+                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Login</button>
+            </form>
+            <a href="recuperar.html" class="forgot-password">Esqueceu o CPF não tem problema!</a>
+            <hr class="btn-primary">
+            <div class="text-right">Novo Login? <a href="criarusuario.html">Crie sua conta</a></div>
+            
+        </div>
+    </div>
+<script type="text/javascript">
+$( document ).ready(function() {
+    
+    loadProfile();
+});
 
-  </table>
-</div>
-</div>
 
+function getLocalProfile(callback){
+    var profileImgSrc      = localStorage.getItem("PROFILE_IMG_SRC");
+    var profileName        = localStorage.getItem("PROFILE_NAME");
+    var profileReAuthEmail = localStorage.getItem("PROFILE_REAUTH_EMAIL");
+
+    if(profileName !== null
+            && profileReAuthEmail !== null
+            && profileImgSrc !== null) {
+        callback(profileImgSrc, profileName, profileReAuthEmail);
+    }
+}
+
+
+function loadProfile() {
+    if(!supportsHTML5Storage()) { return false; }
+    
+    getLocalProfile(function(profileImgSrc, profileName, profileReAuthEmail) {
+       
+        $("#profile-img").attr("src",profileImgSrc);
+        $("#profile-name").html(profileName);
+        $("#reauth-email").html(profileReAuthEmail);
+        $("#inputEmail").hide();
+        $("#remember").hide();
+    });
+}
+
+
+function supportsHTML5Storage() {
+    try {
+        return 'localStorage' in window && window['localStorage'] !== null;
+    } catch (e) {
+        return false;
+    }
+}
+
+
+function testLocalStorageData() {
+    if(!supportsHTML5Storage()) { return false; }
+    localStorage.setItem("PROFILE_IMG_SRC", "//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" );
+    localStorage.setItem("PROFILE_NAME", "César Izquierdo Tello");
+    localStorage.setItem("PROFILE_REAUTH_EMAIL", "oneaccount@gmail.com");
+}
+</script>
 </body>
 </html>

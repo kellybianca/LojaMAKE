@@ -46,7 +46,6 @@ public class ClienteController {
 				.map(cliente -> {
 					cliente.setCpf(clienteRequest.getCpf());
 					cliente.setNome(clienteRequest.getNome());
-					cliente.setSenha(clienteRequest.getSenha());
 					return clienteRepository.save(cliente);
 				}).orElseThrow(() -> new ResourceNotFoundException("Cliente not found: "+clienteId));
 	}
