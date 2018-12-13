@@ -12,9 +12,8 @@ public class ClienteValidacaoTest {
 
 		String nome = "Erica 123 Beatriz";
 		String cpf = "12345678912";
-		String senha = "123456";
-		
-		boolean ehUsuarioValido = cliente.validarUsuario(nome, cpf, senha);
+
+		boolean ehUsuarioValido = cliente.validarUsuario(nome, cpf);
 		
 		assertEquals(false, ehUsuarioValido);
 	}
@@ -29,31 +28,19 @@ public class ClienteValidacaoTest {
 
 		String nome = "EricaBeatriz";
 		String cpf = "12345678912";
-		String senha = "12345678";
 		
-		boolean ehUsuarioValido = servico.validarUsuario(nome, cpf, senha);
+		boolean ehUsuarioValido = servico.validarUsuario(nome, cpf);
 		assertEquals(false, ehUsuarioValido);
 	}
-	
-	public void naoPodeValidarSenhaVazia() {
-		ClienteValidacao servico = new ClienteValidacao();
 
-		String nome = "EricaBeatriz";
-		String cpf = "12345678912";
-		String senha = " ";
-		
-		boolean ehUsuarioValido = servico.validarUsuario(nome, cpf, senha);
-		assertEquals(false, ehUsuarioValido);
-	}
 	
 	public void naoPodeValidarCpfComCaracteres() {
 		ClienteValidacao servico = new ClienteValidacao();
 
 		String nome = "EricaBeatriz";
 		String cpf = "123.456.789-12";
-		String senha = "12345678";
 		
-		boolean ehUsuarioValido = servico.validarUsuario(nome, cpf, senha);
+		boolean ehUsuarioValido = servico.validarUsuario(nome, cpf);
 		assertEquals(false, ehUsuarioValido);
 	}
 
@@ -63,9 +50,8 @@ public class ClienteValidacaoTest {
 
 		String nome = "Ana Maria Braga";
 		String cpf = "123456778925";
-		String senha = "12346578";
 		
-		boolean ehUsuarioValido = servico.validarUsuario(nome, cpf, senha);
+		boolean ehUsuarioValido = servico.validarUsuario(nome, cpf);
 		
 		assertEquals(true, ehUsuarioValido);
 	}

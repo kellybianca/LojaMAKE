@@ -12,10 +12,7 @@ public class Cliente {
 	private String nome;
 	@Column (nullable = false, unique=true)
 	private  String cpf;
-	
-	@Column(nullable = false)
-	private String senha;
-	
+
 	@OneToOne(
 			cascade = CascadeType.ALL,
 			orphanRemoval = true
@@ -47,16 +44,6 @@ public class Cliente {
 		this.cpf = cpf;
 	}
 
-	public String getSenha() {
-		return senha;
-	}
-
-	public void setSenha(String senha) {
-		this.senha = senha;
-	}
-
-	
-	
 	  
 	
 }

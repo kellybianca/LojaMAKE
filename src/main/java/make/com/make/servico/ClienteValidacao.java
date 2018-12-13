@@ -11,7 +11,7 @@ public class ClienteValidacao {
 		
 	private static Matcher matcher;
 	
-	public boolean validarUsuario(String nome, String cpf, String senha) {
+	public boolean validarUsuario(String nome, String cpf) {
 		
 		if(validarCpf(cpf) && validarNome(nome) ) {
 			return true;
@@ -33,10 +33,4 @@ public class ClienteValidacao {
 		return matcher.matches();
 	}
 	
-	public boolean validarSenha(String senha) {
-		pattern = Pattern.compile(NOME_PATTERN, Pattern.CASE_INSENSITIVE);
-		matcher = pattern.matcher(senha);
-		return matcher.matches();
-	}
-
 }
