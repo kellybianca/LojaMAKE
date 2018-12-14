@@ -4,14 +4,15 @@
     <meta charset="utf-8">
    
     <title>MAKE</title>
+    	<script type="text/javascript" src="/js/login.js"></script>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet="stylesheet">
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet=">
     <style type="text/css">
      
 body, html {
     height: 100%;
     background-repeat: no-repeat;
-    background-color: #C0C0C0;
+    background-color: #7B68EE;
 }
 
 .card-container.card {
@@ -148,16 +149,37 @@ body, html {
 
     <div class="container">
         <div class="card card-container">
-            <img id="profile-img" class="profile-img-card" src="https://forum.imasters.com.br/uploads/monthly_2017_09/M.png.0b871aeae7f58fc5465add2846e0246f.png" />
-            <form class="form-signin">
+        	<a href="pageItem.html">
+           	 <img id="profile-img" class="profile-img-card" src="https://forum.imasters.com.br/uploads/monthly_2017_09/M.png.0b871aeae7f58fc5465add2846e0246f.png" />
+            </a>
+
                 <span id="reauth-email" class="reauth-email"></span>
-                <input type="text" id="nome" class="form-control" placeholder="Login" required autofocus>
-                <input type="password" id="senha" class="form-control" placeholder="CPF" required>
-                <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit">Login</button>
-            </form>
+                <h4>Nome: </h4>
+                <input type="text" id="nome" class="form-control" placeholder="Login" required>
+                <h4>CPF :</h4>
+                <input type="text" id="cpf" class="form-control" placeholder="1234567890" required>
+                <input type="button" value="Enviar" onclick="clicando()"/>
+                
+                <a href="pageItem.html">
+            	    <button class="btn btn-lg btn-primary btn-block btn-signin" > Página Principal </button>
+                </a>
+
            
         </div>
     </div>
+    <div class="container">
+  <h2>Login</h2>
+  <table class="table table-striped" >
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>CPF</th>
+        
+      </tr>
+    </thead>
+
+  </table>
+</div>
 <script type="text/javascript">
 $( document ).ready(function() {
     

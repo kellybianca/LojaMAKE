@@ -1,4 +1,4 @@
-
+''
 function clicando(){
 	let nome = document.getElementById('nome').value;
 	let cpf = document.getElementById('cpf').value;
@@ -9,7 +9,7 @@ function clicando(){
 		
 	};
 			
-			fetch("/cliente", {
+			fetch("/login", {
 				method: "POST",
 				headers : {
 					"Content-Type": "application/json"
@@ -17,7 +17,7 @@ function clicando(){
 				body: JSON.stringify(data)
 				
 			}).then(function(response){
-				createTable();
+				criandoTable();
 				
 			}).catch(function(error) {
 				console.log(error);
@@ -34,7 +34,7 @@ function criandoTable(){
 				.then(function(data){
 					
 					let tb = document.getElementById("cliente");
-					tb.innerHTML =  "<tr><th> Nome </th></th><th> CPF </th></tr>"
+					tb.innerHTML =  "<tr><th>  </th></th><th>  </th></tr>"
 						
 					for(let i = 0; i < data.content.length;i++){
 						

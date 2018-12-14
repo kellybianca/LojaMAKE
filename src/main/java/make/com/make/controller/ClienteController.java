@@ -1,5 +1,7 @@
 package make.com.make.controller;
 
+import java.util.Map;
+
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -37,6 +39,11 @@ public class ClienteController {
 	@PostMapping("/cliente")
 	public Cliente createCliente(@Valid @RequestBody Cliente cliente) {
 		return clienteRepository.save(cliente);
+	}
+	
+	@PostMapping("/login")
+	public Cliente login(@RequestBody Map<String, String> paMap) {
+		return clienteRepository.findByNomeAndCpf(paMap.get("nome"), paMap.get("cpf"));
 	}
 	
 	@PutMapping("/cliente/{clienteId}")

@@ -12,6 +12,25 @@ public class Cliente {
 	private String nome;
 	@Column (nullable = false, unique=true)
 	private  String cpf;
+    
+	@Column
+	private String senha;
+	
+	public String getSenha() {
+		return senha;
+	}
+
+	public void setSenha(String senha) {
+		this.senha = senha;
+	}
+
+	public Carrinho getCarrinho() {
+		return carrinho;
+	}
+
+	public void setCarrinho(Carrinho carrinho) {
+		this.carrinho = carrinho;
+	}
 
 	@OneToOne(
 			cascade = CascadeType.ALL,

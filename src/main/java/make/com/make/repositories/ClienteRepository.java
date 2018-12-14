@@ -8,4 +8,6 @@ import make.com.make.model.Cliente;
 @Repository
 public interface ClienteRepository extends JpaRepository<Cliente, Long>{
 
+	public Cliente findByNomeAndCpf(String nome, String cpf);
 }
+
